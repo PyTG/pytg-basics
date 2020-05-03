@@ -4,19 +4,19 @@ from modules.pytg.ModulesLoader import ModulesLoader
 
 from telegram.ext import MessageHandler, Filters
 
-from modules.your_bot_messages.handlers.messages.reply import reply_message_handler
+from .handlers.messages.reply import reply_message_handler
 
 def load_messages_handlers(dispatcher):
-    module_id = ModulesLoader.get_module_id("your_bot_messages")
+    module_id = ModulesLoader.get_module_id("various_messages")
 
     dispatcher.add_handler(MessageHandler(Filters.text, reply_message_handler), group=module_id)
 
 def initialize():
-    logging.info("Initializing your_bot_messages module...")
+    logging.info("Initializing various_messages module...")
     pass
 
 def connect():
-    logging.info("Connecting your_bot_messages module...")
+    logging.info("Connecting various_messages module...")
 
     bot_manager = ModulesLoader.load_manager("bot")
 

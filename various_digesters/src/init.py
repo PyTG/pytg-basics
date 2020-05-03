@@ -3,11 +3,10 @@ import telegram, logging
 from modules.pytg.ModulesLoader import ModulesLoader
 
 # Form digesters
-from modules.your_bot_digesters.handlers.form_digesters.dummy import dummy_digester
+from .digesters.forms.dummy import dummy_digester
 
 # Request digesters
-from modules.your_bot_digesters.handlers.request_digesters.accept.dummy import dummy_accept_digester
-from modules.your_bot_digesters.handlers.request_digesters.reject.dummy import dummy_reject_digester
+from .digesters.requests.dummy import dummy_request_digester
 
 def load_digesters():
     # Form digesters
@@ -18,14 +17,14 @@ def load_digesters():
     # Request digesters
     requests_manager = ModulesLoader.load_manager("requests")
 
-    requests_manager.add_digester("dummy", dummy_accept_digester, dummy_reject_digester)
+    requests_manager.add_digester("dummy", dummy_request_digester)
 
 def initialize():
-    logging.info("Initializing your_bot_digesters module...")
+    logging.info("Initializing various_digesters module...")
     pass
 
 def connect():
-    logging.info("Connecting your_bot_digesters module...")
+    logging.info("Connecting various_digesters module...")
 
     load_digesters()
 

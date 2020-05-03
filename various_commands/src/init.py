@@ -4,7 +4,7 @@ from modules.pytg.ModulesLoader import ModulesLoader
 
 from telegram.ext import CommandHandler
 
-from modules.your_bot_commands.handlers.commands.start import start_cmd_handler
+from .handlers.commands.start import start_cmd_handler
 
 def load_command_handlers(dispatcher):
     dispatcher.add_handler(CommandHandler(["start", "menu"], start_cmd_handler))

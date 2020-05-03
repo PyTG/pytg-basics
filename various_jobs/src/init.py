@@ -2,7 +2,7 @@ import telegram, logging
 
 from modules.pytg.ModulesLoader import ModulesLoader
 
-from modules.your_bot_jobs.handlers.jobs.dummy import dummy_job
+from .handlers.jobs.dummy import dummy_job
 
 def schedule_jobs(job_queue):
     job_queue.run_repeating(dummy_job, interval=15*60, first=0)
